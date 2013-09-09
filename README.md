@@ -1,15 +1,25 @@
 jquery.doodal.js
 ================
 
+> jQuery.doodal.js is a very simplistic modal plugin for jQuery. It has custom events, allows stacking, and is powered by CSS transitions
+
 ### Usage
 
 Instatiate a new doodal.
 
 ```javascript
-$('.doodal').doodal();
+$('.doodal').doodal({
+  type: 'modal',
+  closeclass: '.doodal-close',
+  trueclass: '.doodal-true',
+  falseclass: '.doodal-false',
+  showclass: 'showing'
+});
 ```
 
-trigger an open to see it
+Those are all the default options so in this specific example I am not actually overwriting anything.
+
+Now trigger an `open` to see it:
 
 ```javascript
 $('#doodal1').trigger('open');
