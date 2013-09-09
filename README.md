@@ -1,47 +1,25 @@
-nudeproject
-===========
+jquery.doodal.js
+================
 
-A starting point for new web projects, meant for building simple sites or landing pages.
+### Usage
 
-![NudeProject Logo](https://raw.github.com/james2doyle/nudeproject/master/nudeproject.png)
+Instatiate a new doodal.
 
-### grunt
+```javascript
+$('.doodal').doodal();
+```
 
-included grunt taks
+trigger an open to see it
 
-* clean -- removing files before tasks run
-* cssmin -- minify and concat css files
-* imagemin -- compress images
-* svgmin -- compress svg files
-* uglify -- minify and concat js
+```javascript
+$('#doodal1').trigger('open');
+```
 
-### stylesheets
 
-* normalize.css
-* basic styles for font normalization
-
-### javascript
-
-modernizr custom build
-
-* cssanimations
-* csstransforms
-* csstransforms3d
-* csstransitions
-* canvas
-* audio
-* video
-* localstorage
-* svg
-* touch
-* webgl
-* shiv
-* cssclasses
-* teststyles
-* testprop
-* testallprops
-* prefixes
-* domprefixes
-* css_boxsizing
-* script_async
-* script_defer
+### Custom Events
+* *open*: - when the modal starts to open
+* *afteropen*: - after the animation is over and it is open
+* *ontrue*: - for confirms yes button
+* *onfalse*: - for confirms no button
+* *close*: - when the close is clicked
+* *afterclose*: - after the animation is over and it is hidden

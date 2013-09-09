@@ -1,0 +1,71 @@
+/*
+
+*/
+
+.doodal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.8);
+  opacity: 0;
+  z-index: -1;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: opacity 0.5s ease;
+  -moz-transition: opacity 0.5s ease;
+  -ms-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+
+.doodal-modal {
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+  -moz-transition: opacity 0.5s ease;
+  -ms-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+
+/* my own styles */
+.doodal-modal {
+  width: 500px;
+  margin-left: -250px;
+  top: 100px;
+  background: #eee;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+/* i used top/right values that match my padding */
+.doodal-modal .doodal-close {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
+.doodal.showing {
+  opacity: 1;
+}
+
+.doodal.showing .doodal-modal {
+  opacity: 1;
+}
+
+/* my own custom "animation" */
+.doodal-modal.from-top {
+  top: -500px;
+  -webkit-transition: top 0.5s ease, opacity 0.5s ease;
+  -moz-transition: top 0.5s ease, opacity 0.5s ease;
+  -ms-transition: top 0.5s ease, opacity 0.5s ease;
+  -o-transition: top 0.5s ease, opacity 0.5s ease;
+  transition: top 0.5s ease, opacity 0.5s ease;
+}
+
+.doodal.showing .doodal-modal.from-top {
+  top: 100px;
+}

@@ -6,17 +6,52 @@
 <html class="no-js not-ie">
 <head>
   <meta charset="utf-8" />
-  <title>Nude Project</title>
+  <title>jQuery.doodal.js</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <link rel="stylesheet" href="css/style.css" media="screen" />
-  <script src="js/__modernizr.custom.js"></script>
+  <link rel="stylesheet" href="css/style.min.css" media="screen" />
   <!--[if IE]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body>
-  <div class="container">
-    <img src="img/Slice 1.svg">
+  <button class="show-doodal" name="doodal1">show modal 1</button>
+  <button class="show-doodal" name="doodal2">show modal 2</button>
+  <div class="doodal" id="doodal1">
+    <div class="doodal-modal">
+      <h1>Alert Style Modal</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+      <button class="doodal-close">X</button>
+    </div>
   </div>
-<script src="js/main.js"></script>
-<!-- <script src="js/script.min.js"></script> -->
+  <div class="doodal" id="doodal2">
+    <div class="doodal-modal from-top">
+      <h1>Confirm Style Modal</h1>
+      <h4>With a custom transition</h4>
+      <p>Do you love Internet Explorer?</p>
+      <button class="doodal-true" data-bool="true">Yes</button>
+      <button class="doodal-false" data-bool="false">No</button>
+      <button class="doodal-close">X</button>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="js/jquery.doodal.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // passing the default options
+      $('.doodal').doodal({
+        type: 'modal',
+        closeclass: '.doodal-close',
+        trueclass: '.doodal-true',
+        falseclass: '.doodal-false',
+        showclass: 'showing'
+      });
+      $('.doodal').on('open afteropen ontrue onfalse close afterclose', function(event) {
+        console.log(this.id, event.type);
+      });
+      $('.show-doodal').click(function(event) {
+        event.preventDefault();
+        $('#'+this.name).trigger('open');
+        return false;
+      });
+    });
+  </script>
 </body>
 </html>
