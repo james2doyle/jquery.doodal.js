@@ -3,6 +3,8 @@ jquery.doodal.js
 
 > jQuery.doodal.js is a very simplistic modal plugin for jQuery. It has custom events, allows stacking, and is powered by CSS transitions
 
+[See the demo](http://james2doyle.github.io/jquery.doodal.js/)
+
 ### Usage
 
 Instatiate a new doodal.
