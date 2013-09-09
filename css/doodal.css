@@ -62,6 +62,21 @@ with normalize.css
   right: 1em;
 }
 
+.doodal-modal .doodal-close:hover {
+  color: white;
+  background-color: #333;
+}
+
+.doodal-modal .doodal-true:hover {
+  color: white;
+  background-color: #66ccff
+}
+
+.doodal-modal .doodal-false:hover {
+  color: white;
+  background-color: #ff0000
+}
+
 /* my own custom "animation" */
 .doodal-modal.from-top {
   top: -500px;

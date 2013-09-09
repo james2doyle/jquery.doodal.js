@@ -66,7 +66,7 @@ h6 {
 }
 
 .container {
-  width: 900px;
+  width: 740px;
   margin: 0 auto;
 }
 
@@ -75,6 +75,16 @@ button {
   outline: none;
   border-radius: 2px;
   border: none;
-  padding: 4px 10px 3px;
-  background: #ccc;
+  padding: 6px 15px 5px;
+  background-color: #ccc;
+  font-weight: bold;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+button:hover {
+  background-color: #ddd;
 }
