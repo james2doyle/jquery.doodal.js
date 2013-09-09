@@ -15,8 +15,31 @@
   <div class="container">
     <h1>jQuery.doodal.js</h1>
     <p>jQuery.doodal.js is a very simplistic modal plugin for jQuery. It has custom events, allows stacking, and is powered by CSS transitions.</p>
+    <h3>Demo Modals</h3>
     <button class="show-doodal" name="doodal1">show alert</button>
     <button class="show-doodal" name="doodal2">show confirm</button>
+    <h3>Usage</h3>
+    <p>Instatiate a new doodal. Those are all the default options so in this specific example I am not actually overwriting anything.</p>
+    <div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.doodal'</span><span class="p">).</span><span class="nx">doodal</span><span class="p">({</span>
+      <span class="nx">type</span><span class="o">:</span> <span class="s1">'modal'</span><span class="p">,</span>
+      <span class="nx">closeclass</span><span class="o">:</span> <span class="s1">'.doodal-close'</span><span class="p">,</span>
+      <span class="nx">trueclass</span><span class="o">:</span> <span class="s1">'.doodal-true'</span><span class="p">,</span>
+      <span class="nx">falseclass</span><span class="o">:</span> <span class="s1">'.doodal-false'</span><span class="p">,</span>
+      <span class="nx">showclass</span><span class="o">:</span> <span class="s1">'showing'</span>
+      <span class="p">});</span>
+    </pre></div>
+    <p>Now trigger an <code>open</code> to see it:</p>
+    <div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#doodal1'</span><span class="p">).</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">'open'</span><span class="p">);</span>
+    </pre></div>
+    <h3>Custom Events</h3>
+    <ul>
+      <li><em>open</em>: - when the modal starts to open</li>
+      <li><em>afteropen</em>: - after the animation is over and it is open</li>
+      <li><em>ontrue</em>: - for confirms yes button</li>
+      <li><em>onfalse</em>: - for confirms no button</li>
+      <li><em>close</em>: - when the close is clicked</li>
+      <li><em>afterclose</em>: - after the animation is over and it is hidden</li>
+    </ul>
     <div class="doodal" id="doodal1">
       <div class="doodal-modal">
         <h1>Alert Style Modal</h1>
