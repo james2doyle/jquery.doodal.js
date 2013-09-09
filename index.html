@@ -12,23 +12,27 @@
   <!--[if IE]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body>
-  <button class="show-doodal" name="doodal1">show modal 1</button>
-  <button class="show-doodal" name="doodal2">show modal 2</button>
-  <div class="doodal" id="doodal1">
-    <div class="doodal-modal">
-      <h1>Alert Style Modal</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-      <button class="doodal-close">X</button>
+  <div class="container">
+    <h1>jQuery.doodal.js</h1>
+    <p>jQuery.doodal.js is a very simplistic modal plugin for jQuery. It has custom events, allows stacking, and is powered by CSS transitions.</p>
+    <button class="show-doodal" name="doodal1">show modal 1</button>
+    <button class="show-doodal" name="doodal2">show modal 2</button>
+    <div class="doodal" id="doodal1">
+      <div class="doodal-modal">
+        <h1>Alert Style Modal</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+        <button class="doodal-close">X</button>
+      </div>
     </div>
-  </div>
-  <div class="doodal" id="doodal2">
-    <div class="doodal-modal from-top">
-      <h1>Confirm Style Modal</h1>
-      <h4>With a custom transition</h4>
-      <p>Do you love Internet Explorer?</p>
-      <button class="doodal-true" data-bool="true">Yes</button>
-      <button class="doodal-false" data-bool="false">No</button>
-      <button class="doodal-close">X</button>
+    <div class="doodal" id="doodal2">
+      <div class="doodal-modal from-top">
+        <h1>Confirm Style Modal</h1>
+        <h4>With a custom transition</h4>
+        <p>Do you love Internet Explorer?</p>
+        <button class="doodal-true" data-bool="true">Yes</button>
+        <button class="doodal-false" data-bool="false">No</button>
+        <button class="doodal-close">X</button>
+      </div>
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>

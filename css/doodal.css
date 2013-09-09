@@ -1,5 +1,7 @@
 /*
-
+the required styles
+remember that I have developed this stylesheet
+with normalize.css
 */
 
 .doodal {
@@ -31,6 +33,16 @@
   transition: opacity 0.5s ease;
 }
 
+.doodal.showing {
+  opacity: 1;
+}
+
+.doodal.showing .doodal-modal {
+  opacity: 1;
+}
+
+/* end required styles */
+
 /* my own styles */
 .doodal-modal {
   width: 500px;
@@ -38,22 +50,16 @@
   top: 100px;
   background: #eee;
   padding: 1em;
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box
 }
 
-/* i used top/right values that match my padding */
+/* I used top/right values that match my padding */
 .doodal-modal .doodal-close {
   position: absolute;
   top: 1em;
   right: 1em;
-}
-
-.doodal.showing {
-  opacity: 1;
-}
-
-.doodal.showing .doodal-modal {
-  opacity: 1;
 }
 
 /* my own custom "animation" */
