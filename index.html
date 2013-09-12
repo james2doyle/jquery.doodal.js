@@ -17,6 +17,7 @@
   <div class="container">
     <h1>jQuery.doodal.js</h1>
     <p>jQuery.doodal.js is a very simplistic modal plugin for jQuery. It has custom events, allows stacking, and is powered by CSS transitions.</p>
+    <p>Look at your <code>console</code> to see the events firing!</p>
     <p>View the <a href="https://github.com/james2doyle/jquery.doodal.js" title="james2doyle/jquery.doodal.js">project on Github</a>.</p>
     <h3>Demo Modals</h3>
     <button class="show-doodal" name="doodal1">show alert</button>
@@ -28,9 +29,11 @@
       <span class="nx">closeclass</span><span class="o">:</span> <span class="s1">'.doodal-close'</span><span class="p">,</span>
       <span class="nx">trueclass</span><span class="o">:</span> <span class="s1">'.doodal-true'</span><span class="p">,</span>
       <span class="nx">falseclass</span><span class="o">:</span> <span class="s1">'.doodal-false'</span><span class="p">,</span>
-      <span class="nx">showclass</span><span class="o">:</span> <span class="s1">'showing'</span>
+      <span class="nx">showclass</span><span class="o">:</span> <span class="s1">'showing'</span><span class="p">,</span>
+      <span class="nx">escape</span><span class="o">:</span> <span class="s1">true</span>
       <span class="p">});</span>
     </pre></div>
+    <em><code>escape: true</code> binds the escape key to closing. This does not work well with multiple/stacked modals.</em>
     <p>Now trigger an <code>open</code> to see it:</p>
     <div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#doodal1'</span><span class="p">).</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">'open'</span><span class="p">);</span>
     </pre></div>
