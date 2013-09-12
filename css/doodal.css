@@ -55,6 +55,21 @@ with normalize.css
   box-sizing: border-box
 }
 
+.doodal-modal.small {
+  width: 400px;
+  margin-left: -200px;
+}
+
+.doodal-modal.large {
+  width: 800px;
+  margin-left: -400px;
+}
+
+.doodal-modal.x-large {
+  width: 1200px;
+  margin-left: -600px;
+}
+
 /* I used top/right values that match my padding */
 .doodal-modal .doodal-close {
   position: absolute;
