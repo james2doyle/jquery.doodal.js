@@ -97,9 +97,8 @@
     closeDoodal: function() {
       this.$elem.removeClass(this.config.showclass);
       transitEnd(this.$elem, 'close', function(elem) {
-        elem.trigger('afterclose');
         // remove the event to stop event propagation
-        elem.off(transitionEnd, transitEnd);
+        elem.off(transitionEnd, transitEnd).trigger('afterclose');
       });
     }
   }
