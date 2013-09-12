@@ -1,7 +1,7 @@
 {
   "name": "jquery.doodal.js",
   "preferGlobal": "true",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "James Doyle james2doyle@gmail.com",
   "description": "jquery.doodal.js",
   "dependencies": {},
