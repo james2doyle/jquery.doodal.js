@@ -1,8 +1,9 @@
 /*
  * jquery.doodal.js
- * v1.0.0
+ * v1.1.0
  * Author: James Doyle(@james2doyle)
  * Repo: https://github.com/james2doyle/jquery.doodal.js
+ * Demo: http://james2doyle.github.io/jquery.doodal.js
  * Licensed under the MIT license
  */
 
@@ -21,6 +22,7 @@
     this.$elem = $(elem);
     this.options = options;
   };
+  // transition end detection
   var transitionEnd = 'transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd';
   function transitEnd($elem, method, callback) {
     if (method === 'open') {
@@ -37,15 +39,13 @@
   // the plugin prototype
   Doodal.prototype = {
     defaults: {
-      type: 'modal',
       closeclass: '.doodal-close',
       trueclass: '.doodal-true',
       falseclass: '.doodal-false',
-      showclass: 'showing'
+      showclass: 'showing',
+      escape: true
     },
     init: function() {
-      // Introduce defaults that can be extended either
-      // globally or using an object literal.
       this.config = $.extend({}, this.defaults, this.options);
       this.eventType();
       this.addEvents(this);
@@ -56,13 +56,18 @@
       this.$elem.on('close', function() {
         $this.closeDoodal();
       });
-      $(document).on('keydown', function(event){
-        if(event.keyCode === 27) {
-          $this.$elem.trigger('close');
-        }
-      });
+      // bind the escape key to the close trigger
+      if (this.config.escape) {
+        $(document).on('keydown', function(event){
+          if(event.keyCode === 27) {
+            $this.$elem.trigger('close');
+          }
+        });
+      }
       return this;
     },
+    // detect if they are using a touchscreen
+    // helps with the click delay
     eventType: function() {
       if('ontouchstart' in window) {
         this.evt = 'touchstart';
@@ -93,22 +98,15 @@
       this.$elem.removeClass(this.config.showclass);
       transitEnd(this.$elem, 'close', function(elem) {
         elem.trigger('afterclose');
+        // remove the event to stop event propagation
         elem.off(transitionEnd, transitEnd);
       });
     }
   }
   Doodal.defaults = Doodal.prototype.defaults;
-
   $.fn.doodal = function(options) {
     return this.each(function() {
       new Doodal(this, options).init();
     });
   };
-  //optional: window.Doodal = Doodal;
 })(jQuery, window, document);
-
-// References
-/*
-Creating Highly Configurable jQuery Plugins (by Mark Dalgleish) - http://goo.gl/1VwfP http://goo.gl/bg63
-Essential jQuery Plugin Patterns (by Addy Osmani) - http://goo.gl/oE0ge
-*/
