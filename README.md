@@ -11,11 +11,11 @@ Instatiate a new doodal.
 
 ```javascript
 $('.doodal').doodal({
-  type: 'modal',
   closeclass: '.doodal-close',
   trueclass: '.doodal-true',
   falseclass: '.doodal-false',
-  showclass: 'showing'
+  showclass: 'showing',
+  escape: true // bind escape key to close
 });
 ```
 
