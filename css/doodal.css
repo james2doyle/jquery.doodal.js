@@ -26,6 +26,9 @@ with normalize.css
   position: absolute;
   left: 50%;
   opacity: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-transition: opacity 0.5s ease;
   -moz-transition: opacity 0.5s ease;
   -ms-transition: opacity 0.5s ease;
@@ -41,20 +44,6 @@ with normalize.css
   opacity: 1;
 }
 
-/* end required styles */
-
-/* my own styles */
-.doodal-modal {
-  width: 500px;
-  margin-left: -250px;
-  top: 100px;
-  background: #eee;
-  padding: 1em;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box
-}
-
 .doodal-modal.small {
   width: 400px;
   margin-left: -200px;
@@ -68,6 +57,26 @@ with normalize.css
 .doodal-modal.x-large {
   width: 1200px;
   margin-left: -600px;
+}
+
+/* All Smartphones in portrait and landscape ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .doodal-modal {
+    left: 0 !important;
+    margin: 0 !important;
+    width: 100%;
+  }
+}
+
+/* end required styles */
+
+/* my own styles */
+.doodal-modal {
+  width: 500px;
+  margin-left: -250px;
+  top: 100px;
+  background: #eee;
+  padding: 1em;
 }
 
 /* I used top/right values that match my padding */
@@ -98,7 +107,7 @@ with normalize.css
 
 .doodal-modal .doodal-true,
 .doodal-modal .doodal-false {
-  width: 49.5%;
+  width: 49%;
 }
 
 .doodal-modal .doodal-true:hover {
